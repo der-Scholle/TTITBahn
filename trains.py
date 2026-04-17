@@ -23,17 +23,29 @@ def delete_train():
         trains = new_trains
         print(f"Train {train_number} deleted.\n")
 
+def search_by_route():
+    route = input("Enter route (e.g., Berlin->Hamburg): ")
+    found = [t for t in trains if route.lower() in t["route"].lower()]
+    if found:
+        for t in found:
+            print(f"{t['number']}: {t['route']} at {t['departure']}")
+    else:
+        print("No trains found.\n")
+
 def main():
     while True:
         print("\n1. Add train")
         print("2. Delete train")
-        print("3. Exit")
+        print("3. Search by route")
+        print("4. Exit")
         choice = input("Choose: ")
         if choice == "1":
             add_train()
         elif choice == "2":
             delete_train()
         elif choice == "3":
+            search_by_route()
+        elif choice == "4":
             break
 
 if __name__ == "__main__":
