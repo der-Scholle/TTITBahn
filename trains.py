@@ -11,7 +11,11 @@ def add_train():
         "route": route,
         "departure": departure
     })
+<<<<<<< HEAD
     print(f"Train {train_number} added from main branch.\n")
+=======
+    print(f"Train {train_number} added from tech computer.\n")
+>>>>>>> feature/conflict-tech
 
 def delete_train():
     train_number = input("Enter train number to delete: ")
